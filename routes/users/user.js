@@ -11,14 +11,14 @@ router.post("/post", async (req, res) => {
         // Verificar si ya existe un registro con el mismo CI
         const { query, values } = await checkDuplicates(ci);
         const duplicateCheckResults = await queryDatabase(query, values);
-
+        console.log(duplicateCheckResults);
         if (duplicateCheckResults.length > 0) {
             return res.json({ mensaje: msg.duplicateuser });
         }
 
         const { queryUser, valuesUser } = await insertUser(nombre, ci);
-        await queryDatabase(queryUser, valuesUser);
-
+        const result = await queryDatabase(queryUser, valuesUser);
+        console.log(result);
         res.json({ mensaje: msg.sucesspost });
     } catch (error) {
         console.log(error);

@@ -9,10 +9,10 @@ router.post('/post', async (req, res) => {
     const { ci } = req.body;
     try {
         const results = await queryDatabase(getLogin(ci));
-
+      
         if (results.length > 0) {
             const user = results[0];
-
+            console.log(user);
             if (ci === user.ci) {
                 // Generar un token JWT con los datos del usuario
                 const token = await generateToken({
@@ -20,8 +20,8 @@ router.post('/post', async (req, res) => {
                     name: user.nombre,
                     ci: user.ci
                 });
-
-                res.json({ token, name: user.nombre,  ci: user.ci});
+                console.log(token)
+                res.json({ token, id: user.id, name: user.nombre,  ci: user.ci});
             } else {
                 res.status(500).json({ mensaje: msg.errorlogin });
             }
