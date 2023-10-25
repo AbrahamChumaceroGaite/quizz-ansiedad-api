@@ -10,7 +10,8 @@ router.post("/post", async (req, res) => {
     try {
        const { queryResult, valuesResult } = await insertResult(idusuario, idquizz, total);
         const result = await queryDatabase(queryResult, valuesResult);
-        res.json({ mensaje: msg.sucesspost });
+        const id = result.insertId;
+        res.json(id);
     } catch (error) {
         console.log(error);
         res.status(500).json({ mensaje: msg.errorquery });

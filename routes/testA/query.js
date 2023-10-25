@@ -12,7 +12,7 @@ function getResult(idusuario, idquizz){
 }
 
 function updateResult(id, result){
-    const queryResult = `UPDATE results_a SET total = ?, SET fechaA = NOW() WHERE id = ?`
+    const queryResult = `UPDATE results_a SET total = ?, fechaA = NOW() WHERE id = ?`
     const valuesResult = [result, id]
 
     return { queryResult, valuesResult }
