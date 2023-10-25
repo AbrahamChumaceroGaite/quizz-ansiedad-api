@@ -14,6 +14,7 @@ app.use(bodyParser.json({ limit: '20mb' }));
 // Importa las rutas
 const r_login = require("./routes/login/login");
 const r_user = require("./routes/users/user");
+const r_testA = require("./routes/testA/main");
 
 // Direccion de Prueba
 app.get("/api/test", (req, res) => {
@@ -23,6 +24,7 @@ app.get("/api/test", (req, res) => {
 // Rutas desprotegidas 
 app.use("/guide/api/login", r_login);
 app.use("/guide/api/user", r_user);
+app.use("/guide/api/testA", r_testA);
 
 app.listen(80, () => {
   console.log("Bien Prendido")

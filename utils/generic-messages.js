@@ -6,4 +6,5 @@ module.exports = {
     duplicateuser: 'Ya existe un usuario con este CI',
     sucesslogin: 'Bienvenido',
     sucesspost: 'Registrado exitosamente',
+    sucessput: 'Actualizado exitosamente',
   };

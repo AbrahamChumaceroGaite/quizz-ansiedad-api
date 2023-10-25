@@ -8,12 +8,12 @@ const connection = mysql.createConnection({
   database: 'guide'
 });
 
-/* 
-const connection = mysql.createConnection({
+
+/* const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password@2023',
   database: 'guia_ansiedad'
-});
- */
+}); */
+
 module.exports = connection;
