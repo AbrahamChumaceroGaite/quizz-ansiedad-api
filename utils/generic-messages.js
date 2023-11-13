@@ -7,4 +7,5 @@ module.exports = {
     sucesslogin: 'Bienvenido',
     sucesspost: 'Registrado exitosamente',
     sucessput: 'Actualizado exitosamente',
+    sucessdelete: 'Eliminado exitosamente',
   };
