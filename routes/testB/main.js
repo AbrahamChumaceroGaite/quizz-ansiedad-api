@@ -76,7 +76,7 @@ router.delete("/delete/:id", async (req, res) => {
 // Función para guardar notas asociadas a una categoría
 async function guardarNotas(usuario_id, categoria_id, notas) {
     for (const nota of notas) {
-        await queryDatabase('INSERT INTO Notas (idusuario, idcategoria, datos) VALUES (?, ?, ?)', [usuario_id, categoria_id, nota.nombre]);
+        await queryDatabase('INSERT INTO notas (idusuario, idcategoria, datos) VALUES (?, ?, ?)', [usuario_id, categoria_id, nota.nombre]);
     }
 }
 
